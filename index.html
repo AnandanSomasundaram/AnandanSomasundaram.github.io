@@ -227,7 +227,8 @@
   <main id="top">
     <header class="hero">
       <div class="wrap">
-        <div>
+        <div class="hero-grid">
+          <div>
             <h1>Anandan Somasundaram</h1>
             <p class="role">IT Operations &amp; Security Analyst</p>
             <p class="place">Adelaide, South Australia</p>
@@ -238,6 +239,28 @@
               <a class="btn" href="mailto:anandan.somasundaram100@gmail.com">Email me</a>
             </div>
           </div>
+
+          <div class="photo-wrap">
+            <div class="photo">
+              <span class="initials" aria-hidden="true">AS</span>
+              <img src="images/profile.jpg" alt="Portrait of Anandan Somasundaram" onerror="this.remove()">
+            </div>
+          </div>
+        </div>
+
+        <div class="terminal" role="img" aria-label="Example PowerShell session generating an identity audit report">
+          <div class="term-bar"><span>PowerShell</span><span>Get-IdentityAuditReport.ps1</span></div>
+<div class="term-body" id="term"><span class="t-line"><span class="t-prompt">PS C:\Audit&gt;</span> Connect-MgGraph -ClientId $appId -CertificateThumbprint $thumb</span>
+<span class="t-line t-dim">Welcome to Microsoft Graph!</span>
+<span class="t-line"><span class="t-prompt">PS C:\Audit&gt;</span> .\Get-IdentityAuditReport.ps1</span>
+<span class="t-line">Checking inactive users ........... <span class="t-ok">done</span></span>
+<span class="t-line">Checking role assignments ......... <span class="t-ok">done</span></span>
+<span class="t-line">Checking disabled accounts ........ <span class="t-ok">done</span></span>
+<span class="t-line">Checking unlicensed users ......... <span class="t-ok">done</span></span>
+<span class="t-line t-dim">Report saved to Reports\IdentityAudit_Monthly.csv</span>
+<span class="t-line"><span class="t-prompt">PS C:\Audit&gt;</span> <span class="cursor"></span></span></div>
+        </div>
+        <p class="caption">Illustrative example of the monthly identity audit report I automated with PowerShell and the Microsoft Graph API.</p>
       </div>
     </header>
 
@@ -446,7 +469,6 @@
         <div class="buttons">
           <a class="btn solid" href="mailto:anandan.somasundaram100@gmail.com">Email me</a>
           <a class="btn" href="https://www.linkedin.com/in/anandan-somasundaram-4892391bb/">LinkedIn</a>
-		  fix
         </div>
       </div>
     </section>
@@ -455,5 +477,23 @@
   <footer>
     <div class="wrap">&copy; 2026 Anandan Somasundaram</div>
   </footer>
+
+  <script>
+    (function () {
+      var lines = document.querySelectorAll('#term .t-line');
+      if (!lines.length) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) { return; }
+      document.documentElement.classList.add('js');
+      var i = 0;
+      function next() {
+        if (i >= lines.length) return;
+        lines[i].classList.add('on');
+        i++;
+        setTimeout(next, i < 3 ? 650 : 420);
+      }
+      setTimeout(next, 500);
+    })();
+  </script>
 </body>
 </html>
