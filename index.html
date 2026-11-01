@@ -51,7 +51,7 @@
     }
     nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
     .brand { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; letter-spacing: 0.02em; }
-    .brand span { color: var(--red-bright); }
+    .brand .dot { color: var(--red-bright); }
     nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
     nav ul a { color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
     nav ul a:hover { color: var(--text); }
@@ -83,6 +83,7 @@
       clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       transition: background 0.15s, color 0.15s;
     }
+    .btn:not(.solid) { clip-path: none; }
     .btn:hover { background: var(--red-deep); }
     .btn.solid { background: var(--red); color: #fff; }
     .btn.solid:hover { background: var(--red-bright); }
@@ -137,14 +138,16 @@
       font-family: var(--display);
       font-size: 1.9rem;
       margin: 0 0 8px;
+      line-height: 1.2;
       display: flex; align-items: center; gap: 14px;
     }
     h2::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--red), transparent); }
     .section-intro { color: var(--muted); margin: 0 0 28px; max-width: 60ch; }
     .about p { max-width: 70ch; color: #d4d4da; }
+    .about p, .section-intro, .project p, .edu p { text-wrap: pretty; }
 
     /* Projects */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
     .project {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -188,12 +191,12 @@
     .job li::marker { color: var(--red); }
 
     /* Skills */
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 18px; }
     .skill-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--red); padding: 16px 18px; }
     .skill-box h3 { font-family: var(--display); font-size: 1.05rem; margin: 0 0 10px; }
 
     /* Education */
-    .edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 18px; }
     .edu div { background: var(--panel); border: 1px solid var(--line); padding: 18px 20px; }
     .edu h3 { font-family: var(--display); margin: 0 0 4px; font-size: 1.1rem; }
     .edu p { margin: 0; color: var(--muted); }
@@ -203,17 +206,28 @@
     footer { margin-top: 48px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
 
     @media (max-width: 760px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .photo-wrap { order: -1; width: min(240px, 70%); justify-self: start; }
-      nav ul { gap: 14px; }
-      nav ul li:nth-child(n+4) { display: none; }
+      .hero { padding: 44px 0 24px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .photo-wrap { order: -1; width: min(180px, 52%); justify-self: start; }
+      .brand-rest { display: none; }
+      nav ul { gap: 12px; }
+      nav ul a { font-size: 0.86rem; }
+      .terminal { margin-top: 40px; font-size: 0.74rem; }
+      .term-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+    }
+    @media (max-width: 380px) {
+      .brand { display: none; }
+      nav .wrap { justify-content: center; }
+      nav ul { gap: 8px; }
+      nav ul a { font-size: 0.8rem; }
+      h1 { font-size: 2.3rem; }
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="wrap">
-      <a class="brand" href="#top">A<span>.</span>Somasundaram</a>
+      <a class="brand" href="#top">A<span class="dot">.</span><span class="brand-rest">Somasundaram</span></a>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -232,7 +246,7 @@
             <h1>Anandan Somasundaram</h1>
             <p class="role">IT Operations &amp; Security Analyst</p>
             <p class="place">Adelaide, South Australia</p>
-            <p class="lead">I run the cloud identity, email and security side of IT: Microsoft 365, Entra ID and Exchange Online, backed by PowerShell automation and careful documentation.</p>
+            <p class="lead">3+ years administering Microsoft 365, Entra ID and security.</p>
             <div class="buttons">
               <a class="btn solid" href="#projects">View my projects</a>
               <a class="btn" href="https://www.linkedin.com/in/anandan-somasundaram-4892391bb/">LinkedIn</a>
@@ -268,15 +282,7 @@
       <div class="wrap">
         <h2>About</h2>
         <p>
-          I'm an IT professional with 3+ years of experience administering cloud platforms, identity and access,
-          and end-user technology, with a focus on Microsoft 365, Entra ID and Exchange Online. I manage users, roles
-          and permissions, Conditional Access and MFA, investigate security alerts, and automate administration with
-          PowerShell and the Microsoft Graph API.
-        </p>
-        <p>
-          I hold a Bachelor of Information Technology (Networking and Cybersecurity) from Flinders University and a
-          Microsoft SC-900 certification. I'm known for clear documentation, careful access management and taking full
-          ownership of outcomes, and I'm looking to grow within a collaborative ICT team.
+          IT professional with 3+ years of experience administering Microsoft 365, Entra ID and Exchange Online, with a focus on identity, access and security. Experienced in managing users, roles and permissions, configuring Conditional Access and MFA, investigating security alerts and automating administration with PowerShell and Microsoft Graph API. Holds a Bachelor of Information Technology (Networking and Cybersecurity) from Flinders University and a Microsoft SC-900 certification. Known for clear documentation, careful access management and full ownership of outcomes, seeking to grow within a collaborative ICT team.
         </p>
       </div>
     </section>
@@ -436,7 +442,7 @@
           </div>
           <div class="skill-box">
             <h3>Support &amp; Service</h3>
-            <div class="chips"><span class="chip">Windows 10/11</span><span class="chip">Hardware</span><span class="chip">Networking</span><span class="chip">ITIL 4</span><span class="chip">ServiceNow</span><span class="chip">Intune (working)</span><span class="chip">Active Directory (foundational)</span></div>
+            <div class="chips"><span class="chip">Windows 10/11</span><span class="chip">Hardware</span><span class="chip">Networking</span><span class="chip">ITIL 4</span><span class="chip">ServiceNow</span><span class="chip">Intune (working)</span><span class="chip">Active Directory</span></div>
           </div>
           <div class="skill-box">
             <h3>Documentation</h3>
