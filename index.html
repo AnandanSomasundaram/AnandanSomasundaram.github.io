@@ -29,15 +29,99 @@
         <h2>About</h2>
         <p>
           I'm an IT professional with 3+ years of experience administering cloud platforms, identity and access,
-		  end-user technology, with a focus on Microsoft 365, Entra ID and Exchange Online. I manage users, roles
-          and permissions, Conditional Access and MFA, investigate security alerts and automate administration with
+          and end-user technology, with a focus on Microsoft 365, Entra ID and Exchange Online. I manage users, roles
+          and permissions, Conditional Access and MFA, investigate security alerts, and automate administration with
           PowerShell and the Microsoft Graph API.
         </p>
         <p>
           I hold a Bachelor of Information Technology (Networking and Cybersecurity) from Flinders University and a
           Microsoft SC-900 certification. I'm known for clear documentation, careful access management and taking full
-          ownership of outcomes, I'm looking to grow within a collaborative ICT team.
+          ownership of outcomes, and I'm looking to grow within a collaborative ICT team.
         </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <p class="section-intro">A selection of the work I've delivered, from identity security projects to a full website rebuild.</p>
+
+        <div class="projects">
+
+          <article class="project">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              <img src="images/project-governance.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>Entra ID identity governance overhaul</h3>
+              <p>Audited every user account, role and group membership, removed dormant accounts with unnecessary privileges, and built a least-privilege RBAC model using security groups. Findings and licensing impacts were documented for leadership.</p>
+              <div class="chips"><span class="chip">Entra ID</span><span class="chip">RBAC</span><span class="chip">Conditional Access</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+              <img src="images/project-mfa.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>MFA modernisation</h3>
+              <p>Migrated 49 users from SMS to Microsoft Authenticator and from legacy per-user MFA to the modern Authentication Methods policy, using Microsoft Graph PowerShell for bulk operations. Traced a post-migration prompt issue to a legacy MFA and Conditional Access conflict and resolved it.</p>
+              <div class="chips"><span class="chip">Microsoft Authenticator</span><span class="chip">Graph PowerShell</span><span class="chip">Change log</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5l6 6-6 6"/><path d="M13 19h7"/></svg>
+              <img src="images/project-automation.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>Automated identity audit reports</h3>
+              <p>Built PowerShell scripts using the Microsoft Graph SDK to report on inactive users, role assignments, disabled accounts and unlicensed users. Runs unattended with an Entra app registration and certificate, and is scheduled monthly through Task Scheduler.</p>
+              <div class="chips"><span class="chip">PowerShell</span><span class="chip">Microsoft Graph</span><span class="chip">Task Scheduler</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <img src="images/project-email.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>Email authentication fix</h3>
+              <p>Investigated persistent SPF, DKIM and DMARC failures, traced the root cause to the external hosting provider, and coordinated the fix with them to improve deliverability and reduce spoofing risk.</p>
+              <div class="chips"><span class="chip">SPF</span><span class="chip">DKIM</span><span class="chip">DMARC</span><span class="chip">DNS</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18"/><path d="M12 3c-3 3-3 15 0 18"/></svg>
+              <img src="images/project-thapovanam.jpg" alt="Screenshot of the Thapovanam website" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>Thapovanam website rebuild</h3>
+              <p>Volunteer project rebuilding a not-for-profit wellbeing centre's WordPress website across 25+ pages in Elementor Pro, including hosting, domain and DNS. Diagnosed and fixed a plugin conflict outage and checked colour contrast against WCAG guidelines.</p>
+              <div class="chips"><span class="chip">WordPress</span><span class="chip">Elementor Pro</span><span class="chip">Bluehost</span><span class="chip">WCAG</span></div>
+              <a class="visit" href="https://thapovanam.com">Visit thapovanam.com</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              <img src="images/project-flow.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>Email archiving flow</h3>
+              <p>Built a Power Automate flow that captures emails from specified sources, extracts the content and attachments, and archives them automatically to a SharePoint folder.</p>
+              <div class="chips"><span class="chip">Power Automate</span><span class="chip">SharePoint</span></div>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
   </main>
