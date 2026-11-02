@@ -201,6 +201,15 @@
     .edu h3 { font-family: var(--display); margin: 0 0 4px; font-size: 1.1rem; }
     .edu p { margin: 0; color: var(--muted); }
 
+    /* Beyond the resume */
+    .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+    .interest { background: var(--panel); border: 1px solid var(--line); border-top: 2px solid var(--red); padding: 20px 20px 22px; transition: border-color 0.15s, transform 0.15s; }
+    .interest:hover { border-color: var(--red); transform: translateY(-3px); }
+    @media (prefers-reduced-motion: reduce) { .interest:hover { transform: none; } }
+    .interest svg { width: 34px; height: 34px; stroke: var(--red-bright); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 10px; }
+    .interest h3 { font-family: var(--display); font-size: 1.15rem; margin: 0 0 8px; }
+    .interest p { color: #c4c4cc; font-size: 0.95rem; margin: 0; text-wrap: pretty; }
+
     /* Contact */
     .contact { text-align: left; padding-bottom: 24px; }
     footer { margin-top: 48px; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
@@ -210,16 +219,16 @@
       .hero-grid { grid-template-columns: 1fr; gap: 32px; }
       .photo-wrap { order: -1; width: min(180px, 52%); justify-self: start; }
       .brand-rest { display: none; }
-      nav ul { gap: 12px; }
-      nav ul a { font-size: 0.86rem; }
+      nav ul { gap: 10px; }
+      nav ul a { font-size: 0.8rem; }
       .terminal { margin-top: 40px; font-size: 0.74rem; }
       .term-body { white-space: pre-wrap; overflow-wrap: anywhere; }
     }
     @media (max-width: 380px) {
       .brand { display: none; }
       nav .wrap { justify-content: center; }
-      nav ul { gap: 8px; }
-      nav ul a { font-size: 0.8rem; }
+      nav ul { gap: 7px; }
+      nav ul a { font-size: 0.74rem; }
       h1 { font-size: 2.3rem; }
     }
   </style>
@@ -233,6 +242,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#beyond">Beyond</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -466,6 +476,45 @@
             <h3>Microsoft Certified: SC-900</h3>
             <p>Security, Compliance and Identity Fundamentals</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beyond">
+      <div class="wrap">
+        <h2>Beyond the resume</h2>
+        <p class="section-intro">Outside of work, I am driven by self-improvement and consistency. Here is a little more about what keeps me busy.</p>
+        <div class="interests">
+          <article class="interest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 11v3"/><path d="M5.5 12.5h3"/><circle cx="16" cy="11.5" r="0.6"/><circle cx="18" cy="13.5" r="0.6"/></svg>
+            <h3>Competitive Gaming</h3>
+            <p>I love online gaming, especially MMORPGs and I'm a competitive person at heart. Raids and ranked play reward strategy, teamwork and staying calm under pressure, which carry straight into how I handle incidents at work.</p>
+          </article>
+          <article class="interest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>
+            <h3>PC Building &amp; Optimisation</h3>
+            <p>I research parts and build PCs for family and friends, then tune Windows for performance using community tools and my own testing. Helping the people around me get the most out of their tech is something I really enjoy.</p>
+          </article>
+          <article class="interest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11"/><path d="M3.5 9v6M20.5 9v6"/><path d="M6.5 12h11"/></svg>
+            <h3>Health &amp; Fitness</h3>
+            <p>I train at the gym, practise Muay Thai at home and meal prep every week, planning and tracking my nutrition down to the gram. Looking after my health takes the same discipline and planning I bring to my work.</p>
+          </article>
+          <article class="interest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3l4 3 4-3 5 4-3 4-2-1v11H8V10l-2 1-3-4 5-4z"/></svg>
+            <h3>Style &amp; Skincare</h3>
+            <p>I'm building my personal style, learning what fits well and investing in pieces I love. After dealing with bad acne, I became invested in Korean skincare and I enjoy researching what works and refining my routine.</p>
+          </article>
+          <article class="interest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="7" rx="1"/><rect x="17" y="14" width="5" height="7" rx="1"/></svg>
+            <h3>Cybersecurity Stories</h3>
+            <p>I'm a regular listener of Darknet Diaries, where real hacks and breaches are told from the inside. It fuels my goal of becoming someone who responds to and helps contain incidents like the ones featured on the show.</p>
+          </article>
+          <article class="interest">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+            <h3>Consistency</h3>
+            <p>I believe consistency is what leads to success and I try to live it every day, from training and meal prep to work and learning. Small improvements, repeated daily, add up to big results.</p>
+          </article>
         </div>
       </div>
     </section>
