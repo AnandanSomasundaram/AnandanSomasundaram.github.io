@@ -429,6 +429,7 @@
         <div class="filters" role="group" aria-label="Filter projects">
           <button type="button" class="filter" data-filter="all" aria-pressed="true">All</button>
           <button type="button" class="filter" data-filter="identity" aria-pressed="false">Identity &amp; Security</button>
+          <button type="button" class="filter" data-filter="infrastructure" aria-pressed="false">Infrastructure</button>
           <button type="button" class="filter" data-filter="automation" aria-pressed="false">Automation</button>
           <button type="button" class="filter" data-filter="email" aria-pressed="false">Email</button>
           <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
@@ -443,6 +444,20 @@
             4. Optional screenshot: save it in the images folder and change the <img src="..."> to its file name.
                Without a screenshot, the icon and the short banner show instead.
           -->
+
+          <article class="project" data-tags="infrastructure identity">
+            <div class="thumb">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></svg>
+              <span class="cat">Infrastructure</span>
+              <img src="images/project-homelab.jpg" alt="" onerror="this.remove()">
+            </div>
+            <div class="project-body">
+              <h3>Hyper-V Active Directory Home Lab</h3>
+              <p>Built a Windows Server 2025 domain on an isolated Hyper-V network with Active Directory, DNS, DHCP, a restricted file share and four Group Policies, then joined a Windows 11 PC. Worked through six service desk tickets including lockouts, password resets, access requests and offboarding.</p>
+              <a class="visit" href="https://github.com/AnandanSomasundaram/HomeLab-Active-Directory" target="_blank" rel="noopener noreferrer">View the lab on GitHub</a>
+              <div class="chips"><span class="chip">Windows Server 2025</span><span class="chip">Active Directory</span><span class="chip">Group Policy</span><span class="chip">DNS &amp; DHCP</span><span class="chip">Hyper-V</span><span class="chip">PowerShell</span></div>
+            </div>
+          </article>
 
           <article class="project" data-tags="identity">
             <div class="thumb">
